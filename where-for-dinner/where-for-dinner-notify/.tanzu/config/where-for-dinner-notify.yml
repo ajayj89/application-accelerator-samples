@@ -1,7 +1,6 @@
 apiVersion: apps.tanzu.vmware.com/v1
 kind: ContainerApp
 metadata:
-  creationTimestamp: null
   name: where-for-dinner-notify
 spec:
   acceptedServiceBindings:
@@ -17,3 +16,7 @@ spec:
   ports:
   - name: main
     port: 8080
+  replicas: 1
+  resources:
+    cpu: 300m
+    memory: 1Gi

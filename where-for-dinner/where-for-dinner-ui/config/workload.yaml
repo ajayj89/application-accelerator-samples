@@ -18,8 +18,8 @@ spec:
   - name: annotations
     value: 
       autoscaling.knative.dev/minScale: "1"      
-  resources:     
-    requests:         
+  resources:
+    requests:
       memory: "500M"
       cpu: "100m"
     limits:         

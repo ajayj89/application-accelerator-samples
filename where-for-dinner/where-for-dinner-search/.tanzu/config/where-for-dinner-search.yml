@@ -1,25 +1,28 @@
 apiVersion: apps.tanzu.vmware.com/v1
 kind: ContainerApp
 metadata:
-  creationTimestamp: null
   name: where-for-dinner-search
 spec:
   acceptedServiceBindings:
-  - name: db
-    types:
-    - mysql
-  - name: rmq
-    types:
-    - rabbitmq
+    - name: db
+      types:
+        - mysql
+    - name: rmq
+      types:
+        - rabbitmq
   build:
     buildpacks: {}
     nonSecretEnv:
-    - name: BP_JVM_VERSION
-      value: "21"
+      - name: BP_JVM_VERSION
+        value: "21"
     path: ../..
   nonSecretEnv:
-  - name: spring_profiles_active
-    value: mysql
+    - name: spring_profiles_active
+      value: mysql
+  replicas: 1
+  resources:
+    cpu: 300m
+    memory: 1Gi
   ports:
-  - name: main
-    port: 8080
+    - name: main
+      port: 8080

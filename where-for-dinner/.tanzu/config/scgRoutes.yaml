@@ -12,7 +12,7 @@ spec:
     filters:
     - StripPrefix=0
     tags:
-    - ui  
+    - ui
   - predicates:
     - Path=/diningsearch/**
     - Method=GET
